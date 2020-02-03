@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<title>Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+<link href="css/main.css" rel="stylesheet" />
+<style>
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Roboto", sans-serif
+  }
+</style>
+
+<body class="w3-light-grey">
+
+  <!-- Page Container -->
+  <div class="w3-content w3-margin-top" style="max-width:1400px;">
+    <div class="s130">
+      <form>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <div class="svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                </path>
+              </svg>
+            </div>
+            <input id="searchSkill" type="text" placeholder="Skill" />
+            <input id="searchLocation" type="text" placeholder="Location" />
+          </div>
+          <div class="input-field second-wrap">
+            <button onclick=search() class="btn-search" type="button">SEARCH</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="float-left">
+      <button class="float-left" onclick="history.back()">Go Back</button>
+      <button onclick="updateSelf()">Go to profile</button>
+    </div>
+
+    <!-- The Grid -->
+    <div class="w3-row-padding">
+
+      <!-- Left Column -->
+      <div class="w3-third">
+
+        <div class="w3-white w3-text-grey w3-card-4">
+          <div class="w3-display-container">
+            <img src="images/signin-image.jpg" style="width:100%" alt="Avatar">
+            <div class="w3-display-bottomleft w3-container w3-text-black">
+            </div>
+          </div>
+          <div class="w3-container">
+            <h2 id="displayName"></h2>
+            <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-teal" id="2displaycanTeachSpecialNeeds"></i>
+            </p>
+            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal" id="2displayProf"></i></p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" id="2displayLocation"></i></p>
+            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal" id="2displayEmail"></i></p>
+            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" id="2displayPhone"></i></p>
+            <hr>
+
+            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills/Subjects</b>
+            </p>
+            <p id="2displaySkill1"></p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+            </div>
+            <p id="2displaySkill2"></p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+                <div class="w3-center w3-text-white">80%</div>
+              </div>
+            </div>
+            <p id="2displaySkill3"></p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+            </div>
+            <br>
+
+          </div>
+        </div><br>
+
+        <!-- End Left Column -->
+      </div>
+
+      <!-- Right Column -->
+      <div class="w3-twothird">
+
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <h2 class="w3-text-grey w3-padding-16"><i
+              class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b id=2displayExp1></b id=2displayYear1></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right" id=2displayWorkYear1></i></h6>
+            <hr>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b id=2displayExp2></b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right" id=2displayWorkYear2></i></h6>
+            <hr>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b id=2displayExp3></b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right" id=2displayWorkYear3></i></h6>
+            <br>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- End Right Column -->
+    </div>
+
+    <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+  </div>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    $("#2displayPhone").text(sessionStorage.getItem('!displayPhone1'))
+    $("#2displayName").text(sessionStorage.getItem('!displayName1'))
+    $("#2displayLocation").text(sessionStorage.getItem('!displayLocation1'))
+    $("#2displayEmail").text(sessionStorage.getItem('!displayEmail1'))
+    $("#2displayProf").text(sessionStorage.getItem('!displayProf1'))
+
+    $("#2displayWorkYear1").text(sessionStorage.getItem('!displayWorkYear1'))
+    $("#2displayWorkYear2").text(sessionStorage.getItem('!displayWorkYear2'))
+    $("#2displayWorkYear3").text(sessionStorage.getItem('!displayWorkYear3'))
+
+    $("#2displayExp1").text(sessionStorage.getItem('!displayExp1'))
+    $("#2displayExp2").text(sessionStorage.getItem('!displayExp2'))
+    $("#2displayExp3").text(sessionStorage.getItem('!displayExp3'))
+
+    $("#2displaySkill1").text(sessionStorage.getItem('!displaySkill1'))
+    $("#2displaySkill2").text(sessionStorage.getItem('!displaySkill2'))
+    $("#2displaySkill3").text(sessionStorage.getItem('!displaySkill3'))
+
+    $("#2displaycanTeachSpecialNeeds").text(sessionStorage.getItem('!displayTeachSpecialNeeds'))
+    
+
+
+  </script>
+</body>
+
+</html>

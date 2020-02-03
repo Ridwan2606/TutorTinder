@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tutor Tinder</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form>
+        <button onclick="updateSelf()">Go to profile</button>
+      </form>
+      <div class="s130">
+        <form>
+            <div class="inner-form">
+                <div class="input-field first-wrap">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                            </path>
+                        </svg>
+                    </div>
+                    <input id="searchSkill" type="text" placeholder="Skill" />
+                    <input id="searchLocation" type="text" placeholder="Location" />
+                </div>
+                <div class="input-field second-wrap">
+                    <button onclick=search() class="btn-search" type="button">SEARCH</button>
+                </div>
+            </div>
+        </form>
+    </div>
+        <h2 class="w3-text-grey w3-padding-16"><i
+            class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+        <div class="agree-term">
+            <input type="text" name="workyear1" id="workyear1" placeholder="Years - Years" />
+        </div>
+        <div class="form-group">
+            <input type="email" name="exp1" id="exp1" placeholder="Experience #1" />
+        </div>
+        <div class="agree-term">
+            <input type="text" name="workyear1" id="workyear1" placeholder="Years - Years" />
+        </div>
+        <div class="form-group">
+            <input type="password" name="exp2" id="exp2" placeholder="Experience #2" />
+        </div>
+        <div class="agree-term">
+            <input type="text" name="workyear1" id="workyear1" placeholder="Years - Years" />
+        </div>
+        <div class="form-group">
+            <input type="password" name="exp3" id="exp3" placeholder="Experience #3" />
+        </div>
+        <div class="form-group">
+            <br>I specialize in special needs student<input type="radio" name="teachSpecialNeeds" value="canTeach" class="agree-term" /> 
+            I don't specialize in special needs student<input type="radio" name="teachSpecialNeeds" value="cannotTeach" class="agree-term" />
+        </div>
+        <div class="form-group form-button">
+            <button onclick = edit_experience() name="signup" id="signup" class="form-submit">Save Changes</button>
+        </div>
+        <form>
+            <button onclick="history.back()">Go Back</button>
+          </form>
+          <script src="vendor/jquery/jquery.min.js"></script>
+          <script src="js/main.js"></script>
+</body>
+</html>

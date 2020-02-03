@@ -106,9 +106,13 @@ router.post('/edit_edu', (req,res) =>
         connection = sqlConnect()
         connection.connect()
         
+        
        queryString= `call tutortinderdb.editEducation(${newRecord.Userid},
        "${newRecord.year1}","${newRecord.year2}","${newRecord.year3}","${newRecord.edu1}"
        ,"${newRecord.edu2}","${newRecord.edu3}","${newRecord.budget}","${newRecord.amSpecialNeeds}")`
+
+
+       console.log(queryString)
 
        connection.query(queryString, (err,rows, fields) => 
        {
@@ -191,6 +195,32 @@ router.post('/searchLocationSkill', (req,res) =>
     }
 )
 
+router.post('/get_user_by_id', (req,res) => 
+    {
+        var newRecord = {
+            Userid: req.body.Userid
+        };
+        
+        connection = sqlConnect()
+        connection.connect()
+        
+       queryString= `call tutortinderdb.FindUserDetailsByID(${newRecord.Userid})`
+
+       connection.query(queryString, (err,rows, fields) => 
+       {
+           if (err){
+               console.log (err)
+               res.status(500).send("Error when trying to add to database")
+           } else {
+               console.log ("Successful status: ")
+               console.log(rows[0][0])
+               res.status(200).send(rows[0][0])
+           }
+       }
+       )
+       connection.end()
+    }
+)
 // TO ADD THE SEARCH API
 
 /*
